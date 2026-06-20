@@ -1,66 +1,69 @@
 <div align="center">
+  <h1>⚖️ Automated Law Firm</h1>
+  <p><b>Local Autonomous Agents for Legal Drafting & Case Law Research</b></p>
+
   <img src="https://img.shields.io/badge/STATUS-PRODUCTION_READY-brightgreen?style=for-the-badge&logo=github" alt="Status" />
   <img src="https://img.shields.io/badge/PYTHON-3.10+-blue?style=for-the-badge&logo=python" alt="Python" />
-  <img src="https://img.shields.io/badge/INFERENCE-LOCAL_EDGE-orange?style=for-the-badge&logo=fastapi" alt="Inference" />
+  <img src="https://img.shields.io/badge/FRAMEWORK-FASTAPI-009688?style=for-the-badge&logo=fastapi" alt="FastAPI" />
+  <img src="https://img.shields.io/github/actions/workflow/status/lakshanmuruganandam/automated-law-firm/ci.yml?style=for-the-badge&logo=githubactions" alt="Build Status" />
   <img src="https://img.shields.io/badge/LICENSE-MIT-red?style=for-the-badge&logo=opensourceinitiative" alt="License" />
 </div>
 
 <br>
 
-<div align="center">
-  <h1>🌌 Automated Law Firm</h1>
-  <p><b>Next-Generation Autonomous Agentic System & Local Inference Engine</b></p>
-</div>
-
-<div align="center">
-  <i>Tags: <code>#AI</code> <code>#MachineLearning</code> <code>#LocalInference</code> <code>#AutonomousAgents</code> <code>#LLM</code> <code>#Python</code> <code>#Serverless</code></i>
-</div>
-
 ---
 
-## ⚡ Executive Overview
+## ⚡ Executive Summary
 
-**Automated Law Firm** represents a paradigm shift in production-grade artificial intelligence. Engineered from the ground up to revolutionize autonomous reasoning, this architecture leverages state-of-the-art constraint matrices to achieve sub-second latency while seamlessly executing hyper-complex, multi-step logic workflows.
+Lawyers charge upwards of $500/hr for boilerplate contract generation and basic research. **Automated Law Firm** is an open-source swarm of autonomous AI agents designed to replace traditional junior counsel.
 
-Unlike massive, bloated monolithic cloud models, this engine is meticulously optimized to run on local edge hardware or lightweight serverless infrastructure without sacrificing reasoning capability.
+By running this entire architecture on your local edge hardware, it solves the biggest barrier to AI in the legal sector: **Absolute Privacy.** Your proprietary business contracts and sensitive legal parameters never touch a third-party server.
 
-## 🚀 Architectural Capabilities
+## 🏗️ Architecture Overview
 
-- 🧠 **Autonomous Execution:** Self-correcting neural reasoning chains that operate entirely independently of human intervention.
-- ⚡ **Local Edge Inference:** Deploys highly optimized, quantization-ready local models requiring minimal VRAM overhead.
-- 🧱 **Modular Micro-Agents:** Isolated component architecture allowing for infinitely scalable, asynchronous logic trees.
-- 🛡️ **Secure Execution:** Hardened operational environment with strict data containment, sanitization, and input validation.
+The backend is powered by a blazing-fast **FastAPI** orchestrator that delegates tasks to specialized "Partner" agents.
 
-## 🛠️ Tech Stack & Engineering
-
-- **Core Engine:** High-concurrency Python backend utilizing asynchronous event loops.
-- **Memory Management:** Highly optimized context-window indexing for rapid RAG (Retrieval-Augmented Generation).
-- **Interface:** Modern, reactive, stateless frontend paradigm ensuring zero-latency user interaction.
-
-## 💻 Deployment Protocol
-
-Getting the engine up and running takes less than 60 seconds.
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/lakshanmuruganandam/automated-law-firm.git
-cd automated-law-firm
-
-# 2. Install core dependencies
-pip install -r requirements.txt
-
-# 3. Ignite the Engine
-python app.py
+```mermaid
+graph TD;
+    Client[User Request] -->|Parameters| API[FastAPI Core]
+    API --> Partner1[Drafting Agent]
+    API --> Partner2[Research Agent]
+    API --> Partner3[Compliance Agent]
+    Partner1 -->|Outputs| Doc[Legal Document]
 ```
 
-<br>
+## ✨ Core Capabilities
+
+*   **Instant Contract Generation:** Generate highly customized NDAs, SaaS Agreements, and Employment Contracts locally in seconds.
+*   **Zero Privacy Leaks:** Completely offline capability ensures attorney-client privilege is never compromised by cloud LLM data logging.
+*   **Production-Ready:** Engineered with Python 3.10+, complete with CI/CD pipelines and a comprehensive test suite.
 
 ---
-<div align="center">
-  <b>Built by:</b> <a href="https://huggingface.co/LADDOO22212015">LADDOO22212015</a><br>
-  <i>Forging the absolute future of open-source autonomous agents.</i>
-</div>
 
+## 🚀 Quick Start Guide
 
-### 🧠 Preferred Model
-> `mistralai/Mixtral-8x22B-Instruct-v0.1` — Massive context window for complex document reasoning.
+### 1. Installation
+
+Clone the repository and install dependencies instantly using the built-in Makefile:
+```bash
+git clone https://github.com/lakshanmuruganandam/automated-law-firm.git
+cd automated-law-firm
+make install
+```
+
+### 2. Boot the Firm
+
+```bash
+make run
+```
+The API will be available at `http://127.0.0.1:8000/docs`.
+
+### 3. Run the Test Suite
+
+```bash
+make test
+```
+
+## 📝 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
