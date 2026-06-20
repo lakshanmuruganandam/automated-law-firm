@@ -1,17 +1,14 @@
 from fastapi import APIRouter
-from pydantic import BaseModel
+from src.models.legal import ContractParams, DraftOutput
+from src.services.agent import LegalAgentSwarm
 
 api_router = APIRouter()
+swarm = LegalAgentSwarm()
 
-class ContractParams(BaseModel):
-    contract_type: str
-    parties: list[str]
-    jurisdiction: str
-
-@api_router.post("/draft/contract")
+@api_router.post("/draft/contract", response_model=dict)
 async def draft_contract(params: ContractParams):
-    # Triggers the drafting agent
+    draft = await swarm.draft_contract(params)
     return {
         "status": "success", 
-        "document": f"DRAFT {params.contract_type} between {', '.join(params.parties)} under the laws of {params.jurisdiction}."
+        "document": draft.model_dump()
     }
